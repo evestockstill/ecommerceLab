@@ -1,1 +1,1 @@
-import './ecommerce.tests./js';
+import './renderProducts.test.js';
