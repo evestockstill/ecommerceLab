@@ -1,4 +1,4 @@
-function renderProduct(cues) {
+function renderProducts(cues) {
     const li = document.createElement('li');
     li.className = cues.category;
     li.title = cues.description;
@@ -14,6 +14,10 @@ function renderProduct(cues) {
 
     const p = document.createElement('p');
     p.className = 'price';
+    const usd = cues.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    p.textContent = usd;
+    const priceTextNode = document.createTextNode(usd);
+    p.appendChild(priceTextNode);
 
     const button = document.createElement('button');
     button.textContent = 'Add';
