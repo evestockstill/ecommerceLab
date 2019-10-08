@@ -52,14 +52,14 @@ const katana = {
     category: 'break-jump-cue',
     price: 400,
 };
-const cues = {
+const cues = [
     peachauer,
     predator,
     meucci,
     viking,
     cutec,
     katana,
-};
+];
     
 
 export default cues;

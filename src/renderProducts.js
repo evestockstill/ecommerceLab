@@ -8,7 +8,7 @@ function renderProducts(cues) {
     li.appendChild(h3);
 
     const img = document.createElement('img');
-    img.src = cues.image;
+    img.src = '../assets/' + cues.image;
     img.alt = cues.name + ' image';
     li.appendChild(img);
 
