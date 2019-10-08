@@ -1,7 +1,7 @@
 
 
 const peachauer = {
-    id: 'peachauer',
+    code: 'peachauer',
     name: 'J.Pechauer Cues Limited Edition 50th Anniversary',
     image: 'peachauer1400.jpg',
     description: 'Limited Edition Ebony Cue with Simulated Ivory',
@@ -10,7 +10,7 @@ const peachauer = {
 };
     
 const meucci = {
-    id: 'meucci',
+    code: 'meucci',
     name: 'Meucci Cues - Hall of Fame 02',
     image: 'meucci500.jpg',
     description: 'wrapless pointed inlays, unilock, Natural Stained Birdseye Maple Forearm with Four Ivory Colored',
@@ -19,7 +19,7 @@ const meucci = {
 };
     
 const viking = {
-    id: 'viking',
+    code: 'viking',
     name: 'viking A433',
     image: 'viking1400.jpg',
     description: 'Limited Edition Ebony Cue with Simulated Ivory',
@@ -28,7 +28,7 @@ const viking = {
 };
     
 const predator = {
-    id: 'predator',
+    code: 'predator',
     name: 'Predator P3 Metallic Black With Wrap with 3rd Generation Shaft',
     image: 'predator900.jpg',
     description: 'Uni-Loc Quick Release Stainless Steel Joint Leather Luxe Wrap',
@@ -37,7 +37,7 @@ const predator = {
 };
     
 const cutec = {
-    id: 'cutec',
+    code: 'cutec',
     name: 'cutec high flyer',
     image: 'cutecjump2000.jpg',
     description: 'Design: Black fiberglass',
@@ -45,7 +45,7 @@ const cutec = {
     price: 200,
 };
 const katana = {
-    id: 'katana',
+    code: 'katana',
     name: 'slice',
     image: 'katana250.jpg',
     description: 'Design: Black fiberglass',
