@@ -7,7 +7,7 @@ const tableElement = document.querySelector('tboy');
 cart.forEach(cueOrder => {
     renderTableRow(cues, cueOrder);
     const cueIdFromOrder = cueOrder.id;
-    cues.forEach(fruit => {
+    cues.forEach(cues => {
         if(cues.id === cueIdFromOrder) {
             const row = renderTableRow(cues, cueOrder),
         }

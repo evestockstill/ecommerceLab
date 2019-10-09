@@ -39,7 +39,7 @@ const predator = {
 const cutec = {
     id: 'cutec',
     name: 'cutec high flyer',
-    image: 'cutecjump2000.jpg',
+    image: 'cutecjump200.jpg',
     description: 'Design: Black fiberglass',
     category: 'jump-cue',
     price: 200,

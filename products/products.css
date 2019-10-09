@@ -1,42 +1,49 @@
-/* 
-#cues {
+ * {
+    margin: 0;
+    padding: 0;
+    flex-wrap: flex;
+    background: black;
+    color: white;
+
+}
+#cues{
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
-}
-
+    justify-content: space-around;
+    align-items: center;
+    }
+    
 #cues li {
+    justify-content: center;
+    align-items: center;
     list-style: none;
     position: relative;
     background: white;
     border: 1px solid #aaa;
     border-radius: 5px;
-    width: 100px;
-    height: 150px;
+    width: 400px;
+    height: 300px;
     margin-right: 5px;
     margin-bottom: 5px;
     text-align: center;
     box-shadow: 1px 1px 2px #ccc;
     transition: transform 200ms ease-in-out;
 }
-
 #cues li:hover {
     box-shadow: 2px 2px 3px #bbb;
     transform: translate3d(-1px, -1px, 0);
 }
-
 #cues li h3 {
     font-size: 1.1rem;
     margin: 5px;
 }
 
 #cues li img {
-    width: 50%;
+    width: 60%;
     margin-top: 10px;
 }
-
 .price {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     position: absolute;
     bottom: 0;
     left: 0; 
@@ -54,4 +61,4 @@
     background: #aaa;
     color: white;
 }
- */
+
