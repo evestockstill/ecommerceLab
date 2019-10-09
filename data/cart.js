@@ -1,13 +1,18 @@
 export const cart = [{
-    code: 'apple',
-    quantity: 2
+    id: 'peachauer',
+    quantity: 4
 }, {
-    code: 'banana',
+    id: 'meucci',
     quantity: 5
 }, {
-    code: 'mango',
-    quantity: 1
+    id: 'viking',
+    quantity: 3
 }, {
-    code: 'orange',
+    id: 'cutec',
+    quantity: 8
+}, {
+    id: 'katana',
     quantity: 10
+
 }];
+
