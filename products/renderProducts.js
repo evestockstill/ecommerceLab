@@ -12,6 +12,9 @@ function renderProduct(cue) {
     img.alt = cue.name + ' image';
     li.appendChild(img);
     
+    const description = document.createElement('p');
+    description.textContent = cue.description;
+    li.appendChild(description);
 
     const p = document.createElement('p');
     p.className = 'price';

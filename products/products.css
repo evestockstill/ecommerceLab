@@ -1,12 +1,32 @@
- * {
-    margin: 0;
-    padding: 0;
-    flex-wrap: flex;
-    background: black;
-    color: white;
-
+ /* body {
+  margin: 0;
+  padding: 0;
 }
-#cues{
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  background-color: #fff;
+  color: red;
+}
+
+.grid-cues {
+  background-color:black;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+} */
+
+
+
+
+
+
+ 
+ #cues{
     padding: 0;
     display: flex;
     justify-content: space-around;
@@ -61,4 +81,4 @@
     background: #aaa;
     color: white;
 }
-
+ 
