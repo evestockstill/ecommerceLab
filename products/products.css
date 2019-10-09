@@ -1,39 +1,29 @@
- /* body {
+* {
   margin: 0;
   padding: 0;
+  
 }
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-gap: 10px;
-  background-color: #fff;
-  color: red;
+header {
+    text-align: center;
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    margin: 50 0 0 5px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    background: black;
 }
-
-.grid-cues {
-  background-color:black;
-  color: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 150%;
-} */
-
-
-
-
-
-
- 
- #cues{
+p {
+    font-size: .8rem;
+}
+#cues{
     padding: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    }
-    
+}   
 #cues li {
+    flex: 1;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     list-style: none;
@@ -41,8 +31,9 @@
     background: white;
     border: 1px solid #aaa;
     border-radius: 5px;
-    width: 400px;
+    width: 400;
     height: 300px;
+    overflow: hidden;
     margin-right: 5px;
     margin-bottom: 5px;
     text-align: center;
@@ -50,17 +41,27 @@
     transition: transform 200ms ease-in-out;
 }
 #cues li:hover {
+    overflow: hidden;
     box-shadow: 2px 2px 3px #bbb;
     transform: translate3d(-1px, -1px, 0);
 }
 #cues li h3 {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     margin: 5px;
 }
-
 #cues li img {
-    width: 60%;
+    height: 40%;
+    width: 80%;
+    border: 2px solid black;
+    border-radius: 5px;
     margin-top: 10px;
+    transition: all 1s ease;
+}
+#cues li img:hover {
+    height: 65%;
+    width: 85%;
+    border: 2px solid black;
+    border-radius: 5px;
 }
 .price {
     font-size: 0.7rem;
@@ -73,12 +74,19 @@
     justify-content: space-evenly;
     align-items: center;
 }
-
 .price button {
+    background: black;
+    border-radius: 5px;
+    color: white;
+    outline: none;
     transition: color 200ms ease-in-out;
 }
 .price button:hover {
     background: #aaa;
-    color: white;
+    color: black;
 }
- 
+footer {
+    margin-top: 50px;
+    text-align: center;
+}
+
