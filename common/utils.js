@@ -7,22 +7,35 @@ export const makePrettyCurrency = (number) =>
                 currency: 'USD',
             });
 
-
-
-
-// import renderTableRow  from './render-table-row.js';
-// import cues from '../data.js';
-// import cart from '../data.js';
-
-// const tableElement = document.querySelector('tboy');
-
-// cart.forEach(cueOrder => {
-//     renderTableRow(cues, cueOrder);
-//     const cueIdFromOrder = cueOrder.id;
-//     cues.forEach(cues => {
-//         if(cues.id === cueIdFromOrder) {
-//             const row = renderTableRow(cues, cueOrder),
-//         }
-//     })
-// });
-// tableElement.appendChild();
+export function findById(items, id) {
+    for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        if (item.id === id) {
+            return item;
+        }
+    }
+    return null;
+}
+export function toUSD(number) {
+    return number.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    });
+}
+export function calcLineTotal(quantity, price) {
+    const amount = quantity * price;
+    return roundCurrency(amount);
+}
+function roundCurrency(amount) {
+    return Math.round(amount * 100) / 100;
+}
+export function calcOrderTotal(cart, cues) {
+    let orderTotal = 0;
+    for (let i = 0; i < cart.length; i++) {
+        const lineItem = cart[i];
+        const cues = findById(cues, lineItem.id);
+        const lineTotal = calcLineTotal(lineItem.quantity, cues.price);
+        orderTotal += lineTotal;
+    }
+    return roundCurrency(orderTotal);
+}

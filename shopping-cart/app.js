@@ -1,15 +1,16 @@
 import renderTableRow from './render-table-row.js';
-import cues from '../data.js';
-import cart from '../data.js';
-import { makePrettyCurrency } from '';
+import cues from '../data/cues.js';
+import cart from '../data/cart.js';
+import { makePrettyCurrency } from '../common/utils.js';
 
 const tableElement = document.querySelector('tbody');
-const cueIdFromOrder = cueOrder.id;
+// const cueIdFromOrder = cueOrder.id;
+
 let cartTotal = 0;
 cart.forEach(cueOrder => {
-    cues.forEach(cues => {
+    cues.forEach(cue => {
         let cueTotal;
-        if (cues.id === cueIdFromOrder) {
+        if (cues.id === cueOrder.id) {
             const row = renderTableRow(cues, cueOrder);
             tableElement.appendChild(row);
             cueTotal = cue.price * cueOrder.quantity;

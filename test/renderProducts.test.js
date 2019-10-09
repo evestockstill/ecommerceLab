@@ -1,8 +1,8 @@
 import renderProduct from '../products/renderProducts.js';
-// import renderTableRow from '../shopping';
+import renderTableRow from '../shopping-cart/render-table-row.js';
 
 const test = QUnit.test;
-// QUnit.module('Render Fruit');
+
 QUnit.module('Renders Products');
 test('renders a product', (assert) => {
     // arrange
@@ -21,4 +21,28 @@ test('renders a product', (assert) => {
 
     assert.equal(html, expected);
 });
-    
+test('renders a table row', assert => {
+    // arrange
+    const peachauer = {
+        id: 'peachauer',
+        name: 'J.Pechauer Cues Limited Edition 50th Anniversary',
+        image: 'peachauer1400.jpg',
+        description: 'Limited Edition Ebony Cue with Simulated Ivory',
+        category: 'playing-cue',
+        price: 1500,
+    };
+
+    const peachauerOrder = {
+        id: 'peachauer',
+        quantity: 4,
+    };
+
+    const expected = '<tr><td>J.Pechauer Cues Limited Edition 50th Anniversary</td><td>4</td><td>$1,500.00</td><td>$6,000.00</td></tr>';
+
+    // act
+    const cueElementTr = renderTableRow(peachauer, peachauerOrder);
+    const stringHtmlOfFruitElement = cueElementTr.outerHTML;
+
+    // assert
+    assert.deepEqual(stringHtmlOfFruitElement, expected);
+});
