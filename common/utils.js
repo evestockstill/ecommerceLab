@@ -9,7 +9,7 @@ export const makePrettyCurrency = (number) =>
 
 export function findById(items, id) {
     for (let i = 0; i < items.length; i++) {
-        const item = items[i];
+        let item = items[i];
         if (item.id === id) {
             return item;
         }
@@ -33,8 +33,8 @@ export function calcOrderTotal(cart, cues) {
     let orderTotal = 0;
     for (let i = 0; i < cart.length; i++) {
         const lineItem = cart[i];
-        const cues = findById(cues, lineItem.id);
-        const lineTotal = calcLineTotal(lineItem.quantity, cues.price);
+        const foundCue = findById(cues, lineItem.id);
+        const lineTotal = calcLineTotal(lineItem.quantity, foundCue.price);
         orderTotal += lineTotal;
     }
     return roundCurrency(orderTotal);
