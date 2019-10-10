@@ -1,17 +1,24 @@
 import cues from './cues.js';
-import { findById } from '../common/utils.js';
+import { findById } from '../shopping-cart/register.js';
 
 const PRODUCTS_KEY = 'products';
 const SHOPPING_CART_KEY = 'shopping-cart';
+const peachauer = {
+    id: 'peachauer',
+    name: 'J.Pechauer Cues Limited Edition 50th Anniversary',
+    image: 'peachauer1400.jpg',
+    description: 'Limited Edition Ebony Cue with Simulated Ivory',
+    category: 'playing-cue',
+    price: 1500,
 
 const store = {
     storage: window.localStorage,
-    save(key, cue) {
+    save(cues, cue) {
         const json = JSON.stringify(cue);
-        store.storage.setItem(key, json);
+        store.storage.setItem(cues, json);
     },
-    get(key) {
-        const json = store.storage.getCue(key);
+    get(name) {
+        const json = store.storage.getCue(name);
         const cue = JSON.parse(json);
         return cue;
     },
@@ -25,7 +32,7 @@ const store = {
     },
     getProduct(id) {
         const products = store.getProducts();
-        const product = findById(products, id);
+        const product = findById(cues, id);
         return product;
     },
     getShoppingCart() {

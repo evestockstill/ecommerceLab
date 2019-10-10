@@ -1,4 +1,4 @@
-import { toUSD } from '../common/utils.js';
+import { toUSD } from '../shopping-cart/register.js';
 const makeTd = (content) => {
     const tdElement = document.createElement('td');
     tdElement.textContent = content;
