@@ -1,42 +1,69 @@
-/* 
-#cues {
+* {
+  margin: 0;
+  padding: 0;
+}  
+
+header {
+    text-align: center;
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    margin: 50 0 0 5px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+p {
+    font-size: .8rem;
+}
+ul{
     padding: 0;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+}   
+li {
+    flex: 1;
     flex-wrap: wrap;
-}
-
-#cues li {
+    justify-content: center;
+    align-items: center;
     list-style: none;
     position: relative;
     background: white;
     border: 1px solid #aaa;
     border-radius: 5px;
     width: 100px;
-    height: 150px;
+    height: 300px;
+    overflow: hidden;
     margin-right: 5px;
     margin-bottom: 5px;
     text-align: center;
     box-shadow: 1px 1px 2px #ccc;
     transition: transform 200ms ease-in-out;
 }
-
 #cues li:hover {
+    overflow: hidden;
     box-shadow: 2px 2px 3px #bbb;
     transform: translate3d(-1px, -1px, 0);
 }
-
 #cues li h3 {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     margin: 5px;
 }
-
 #cues li img {
-    width: 50%;
+    height: 40%;
+    width: 80%;
+    border: 2px solid black;
+    border-radius: 5px;
     margin-top: 10px;
+    transition: all 1s ease;
 }
-
+#cues li img:hover {
+    height: 65%;
+    width: 85%;
+    border: 2px solid black;
+    border-radius: 5px;
+}
 .price {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     position: absolute;
     bottom: 0;
     left: 0; 
@@ -46,12 +73,19 @@
     justify-content: space-evenly;
     align-items: center;
 }
-
 .price button {
+    background: black;
+    border-radius: 5px;
+    color: white;
+    outline: none;
     transition: color 200ms ease-in-out;
 }
 .price button:hover {
     background: #aaa;
-    color: white;
+    color: black;
 }
- */
+footer {
+    margin-top: 50px;
+    text-align: center;;
+}
+
