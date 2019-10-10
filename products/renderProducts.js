@@ -34,7 +34,7 @@ function renderProduct(cue) {
     button.textContent = 'Add';
     button.value = cue.id;
     button.addEventListener('click', () => {
-        store.orderCue(cue.id);
+        store.orderProduct(cue.id);
     });
     p.appendChild(addButton);
 

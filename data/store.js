@@ -39,7 +39,6 @@ const store = {
         const shoppingCart = store.getShoppingCart();
 
         const lineItem = findById(shoppingCart, id);
-        // does shopping cart already have id?
         if (lineItem) {
             lineItem.quantity++;
         }
