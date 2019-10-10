@@ -10,9 +10,10 @@ export const cart = [{
 }, {
     id: 'cutec',
     quantity: 10
-}, {
-    id: 'katana',
+}, { 
+    id: 'predator',
     quantity: 10
+},
 
-}];
+];
 

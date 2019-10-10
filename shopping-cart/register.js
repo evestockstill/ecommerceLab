@@ -1,20 +1,19 @@
-export function findProduct(cue, id) {
+// export function findProduct(cues, id) {
 
     
-    for (let i = 0; i < cue.length; i++) {
-        const order = cue[i];
+//     for (let i = 0; i < cues.length; i++) {
+//         const cue = cue[i];
 
-        if (cue.id === order) {
-            return cue;
-        }
-    }
-    return null;
-}
+//         if (cue.id === id) {
+//             return cue;
+//         }
+//     }
+//     return null;
+// }
 
-export function calcLineTotal(quantity, price) {
-    return Number((quantity * price).toFixed(2));
-}
-export function calcOrderTotal(order, id) {
+// export function calcLineTotal(quantity, price) {
+//     return Number((quantity * price).toFixed(2));
+// }
 
 
-}
+

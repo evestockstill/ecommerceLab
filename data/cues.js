@@ -8,7 +8,6 @@ const peachauer = {
     category: 'playing-cue',
     price: 1500,
 };
-    
 const meucci = {
     id: 'meucci',
     name: 'Meucci Cues - Hall of Fame 02',
@@ -17,7 +16,6 @@ const meucci = {
     category: 'playing-cue',
     price: 500,
 };
-    
 const viking = {
     id: 'viking',
     name: 'viking A433',
@@ -25,8 +23,7 @@ const viking = {
     description: 'Limited Edition Ebony Cue with Simulated Ivory',
     category: 'playing-cue',
     price: 1400,
-};
-    
+}; 
 const predator = {
     id: 'predator',
     name: 'Predator P3 Metallic Black With Wrap with 3rd Generation Shaft',
@@ -35,7 +32,6 @@ const predator = {
     category: 'playing-cue',
     price: 900,
 };
-    
 const cutec = {
     id: 'cutec',
     name: 'cutec high flyer',
@@ -44,22 +40,12 @@ const cutec = {
     category: 'jump-cue',
     price: 200,
 };
-const katana = {
-    code: 'katana',
-    name: 'slice',
-    image: 'katana250.jpg',
-    description: 'Design: Black fiberglass',
-    category: 'break-jump-cue',
-    price: 400,
-};
 const cues = [
     peachauer,
     predator,
     meucci,
     viking,
     cutec,
-    katana,
 ];
-    
 
 export default cues;

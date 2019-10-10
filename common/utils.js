@@ -1,8 +1,8 @@
-export function findById(items, id) {
-    for (let i = 0; i < items.length; i++) {
-        let item = items[i];
-        if (item.id === id) {
-            return item;
+export function findById(cues, id) {
+    for (let i = 0; i < cues.length; i++) {
+        const cue = cues[i];
+        if (cue.id === id) {
+            return cue;
         }
     }
     return null;
@@ -17,9 +17,6 @@ export function calcLineTotal(quantity, price) {
     const amount = quantity * price;
     return amount;
 }
-// function roundCurrency(amount) {
-//     return Math.round(amount * 100) / 100;
-// }
 export function calcOrderTotal(cart, cues) {
     let orderTotal = 0;
     for (let i = 0; i < cart.length; i++) {
@@ -28,7 +25,6 @@ export function calcOrderTotal(cart, cues) {
         const foundCue = findById(cues, lineItem.id);
         const lineTotal = calcLineTotal(quantityLineItem, foundCue.price);
         orderTotal += lineTotal;
-        console.log('ordertotes', lineTotal);
     }
     return orderTotal;
 }
