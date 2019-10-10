@@ -1,15 +1,15 @@
 export const cart = [{
     id: 'peachauer',
-    quantity: 4
+    quantity: 10
 }, {
     id: 'meucci',
-    quantity: 5
+    quantity: 10
 }, {
     id: 'viking',
-    quantity: 3
+    quantity: 10
 }, {
     id: 'cutec',
-    quantity: 8
+    quantity: 10
 }, {
     id: 'katana',
     quantity: 10

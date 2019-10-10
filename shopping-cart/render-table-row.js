@@ -1,5 +1,5 @@
 
-import { makePrettyCurrency } from '../common/utils.js';
+import { toUSD } from '../common/utils.js';
 const makeTd = (content) => {
     const tdElement = document.createElement('td');
     tdElement.textContent = content;
@@ -8,8 +8,8 @@ const makeTd = (content) => {
 export default (cue, order) => {
     const tableRow = document.createElement('tr');
     const totalPrice = order.quantity * cue.price;
-    const prettyPrice = makePrettyCurrency(cue.price);
-    const prettyTotal = makePrettyCurrency(totalPrice);
+    const prettyPrice = toUSD(cue.price);
+    const prettyTotal = toUSD(totalPrice);
     const columnOne = makeTd(cue.name);
     const columnTwo = makeTd(order.quantity);
     const columnThree = makeTd(prettyPrice);
@@ -18,7 +18,7 @@ export default (cue, order) => {
     tableRow.appendChild(columnTwo);
     tableRow.appendChild(columnThree);
     tableRow.appendChild(columnFour);
-    
+   
     return tableRow;
 };
     

@@ -1,7 +1,7 @@
 import renderTableRow from './render-table-row.js';
 import cues from '../data/cues.js';
 import { cart } from '../data/cart.js';
-import { makePrettyCurrency } from '../common/utils.js';
+import { toUSD } from '../common/utils.js';
 
 const tableElement = document.querySelector('tbody');
 // const cueIdFromOrder = cueOrder.id;
@@ -18,5 +18,5 @@ cart.forEach(cueOrder => {
         }
     });
     const totalCell = document.getElementById('order-total-cell');
-    totalCell.textContent = makePrettyCurrency(cartTotal);
+    totalCell.textContent = toUSD(cartTotal);
 });

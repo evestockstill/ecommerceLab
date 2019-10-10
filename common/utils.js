@@ -1,12 +1,3 @@
-export const makePrettyCurrency = (number) =>
-    number
-        .toLocaleString(
-            'en-US',
-            {
-                style: 'currency',
-                currency: 'USD',
-            });
-
 export function findById(items, id) {
     for (let i = 0; i < items.length; i++) {
         let item = items[i];
@@ -24,18 +15,20 @@ export function toUSD(number) {
 }
 export function calcLineTotal(quantity, price) {
     const amount = quantity * price;
-    return roundCurrency(amount);
+    return amount;
 }
-function roundCurrency(amount) {
-    return Math.round(amount * 100) / 100;
-}
+// function roundCurrency(amount) {
+//     return Math.round(amount * 100) / 100;
+// }
 export function calcOrderTotal(cart, cues) {
     let orderTotal = 0;
     for (let i = 0; i < cart.length; i++) {
-        const lineItem = cart[i];
+        let lineItem = cart[i];
+        let quantityLineItem = cart[i].quantity;
         const foundCue = findById(cues, lineItem.id);
-        const lineTotal = calcLineTotal(lineItem.quantity, foundCue.price);
+        const lineTotal = calcLineTotal(quantityLineItem, foundCue.price);
         orderTotal += lineTotal;
+        console.log('ordertotes', lineTotal);
     }
-    return roundCurrency(orderTotal);
+    return orderTotal;
 }
