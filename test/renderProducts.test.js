@@ -39,10 +39,7 @@ test('renders a table row', assert => {
 
     const expected = '<tr><td>J.Pechauer Cues Limited Edition 50th Anniversary</td><td>4</td><td>$1,500.00</td><td>$6,000.00</td></tr>';
 
-    // act
     const cueElementTr = renderTableRow(peachauer, peachauerOrder);
     const stringHtmlOfFruitElement = cueElementTr.outerHTML;
-
-    // assert
     assert.deepEqual(stringHtmlOfFruitElement, expected);
 });

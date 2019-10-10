@@ -30,13 +30,3 @@ test('calculate order total', (assert) => {
     const checkoutTotal = calcOrderTotal(cart, cues);
     assert.equal(checkoutTotal, expected);
 }); 
-// export function calcOrderTotal(cart, cues) {
-//     let orderTotal = 0;
-//     for (let i = 0; i < cart.length; i++) {
-//         const lineItem = cart[i];
-//         const foundCue = findById(cues, lineItem.id);
-//         const lineTotal = calcLineTotal(lineItem.quantity, foundCue.price);
-//         orderTotal += lineTotal;
-//     }
-//     return roundCurrency(orderTotal);
-// }

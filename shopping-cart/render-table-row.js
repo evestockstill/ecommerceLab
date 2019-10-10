@@ -1,4 +1,3 @@
-
 import { toUSD } from '../common/utils.js';
 const makeTd = (content) => {
     const tdElement = document.createElement('td');
