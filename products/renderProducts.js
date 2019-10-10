@@ -1,3 +1,5 @@
+import store from '../data/store';
+import { toUSD } from '../shopping-cart/register.js';
 function renderProduct(cue) {
     const li = document.createElement('li');
     li.className = cue.category;
@@ -18,14 +20,23 @@ function renderProduct(cue) {
 
     const p = document.createElement('p');
     p.className = 'price';
-    
-    const usd = cue.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-    p.textContent = usd;
-    
+
+    const usd = toUSD(cue.price);
+    const priceTextNode = document.createTextNode(usd);
+    p.appendChild(priceTextNode);
+
     const button = document.createElement('button');
     button.textContent = 'Add';
     button.value = cue.id;
     p.appendChild(button);
+    
+    const addButton = document.createElement('button');
+    button.textContent = 'Add';
+    button.value = cue.id;
+    button.addEventListener('click', () => {
+        store.orderCue(cue.id);
+    });
+    p.appendChild(addButton);
 
     li.appendChild(p);
 
