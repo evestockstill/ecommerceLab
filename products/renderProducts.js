@@ -30,9 +30,18 @@ function renderProduct(cue) {
     button.addEventListener('click', () => {
         cueShop.orderCue(cue.id);
         let cartItems = localStorage.getItem('cart');
+        console.log(cartItems);
         let cart;
-        cart = cartItems('cart') ? JSON.parse(cartItems('cart')) : [];
-        
+        if (cartItems) {
+            cart = JSON.parse(cartItems);
+            console.log('made it here');
+        }
+        else {
+            cart = [];
+            console.log('made cart');
+        }
+        console.log(cart);
+        console.log('id', cue.id);
         let lineItem = findById(cart, cue.id);  
         if (!lineItem) {
             lineItem = {

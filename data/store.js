@@ -1,5 +1,5 @@
 import cues from './cues.js';
-import { findById } from '../shopping-cart/register.js';
+import { findById } from '../common/utils.js';
 
 const CUE_KEY = 'cues';
 const CUE_SHOPPING_CART_KEY = 'shopping-cart';
@@ -10,7 +10,7 @@ const cueShop = {
         cueShop.storage.setItem(key, json);
     },
     get(key) {
-        const json = cueShop.storage.get(key);
+        const json = cueShop.storage.getItem(key);
         const cueItem = JSON.parse(json);
         return cueItem;
     },
