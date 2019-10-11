@@ -1,51 +1,42 @@
 import cues from './cues.js';
 import { findById } from '../shopping-cart/register.js';
 
-const PRODUCTS_KEY = 'products';
-const SHOPPING_CART_KEY = 'shopping-cart';
-const peachauer = {
-    id: 'peachauer',
-    name: 'J.Pechauer Cues Limited Edition 50th Anniversary',
-    image: 'peachauer1400.jpg',
-    description: 'Limited Edition Ebony Cue with Simulated Ivory',
-    category: 'playing-cue',
-    price: 1500,
-
-const store = {
+const CUE_KEY = 'cues';
+const CUE_SHOPPING_CART_KEY = 'shopping-cart';
+const cueShop = {
     storage: window.localStorage,
-    save(cues, cue) {
-        const json = JSON.stringify(cue);
-        store.storage.setItem(cues, json);
+    save(key, item) {
+        const json = JSON.stringify(item);
+        cueShop.storage.setItem(key, json);
     },
-    get(name) {
-        const json = store.storage.getCue(name);
-        const cue = JSON.parse(json);
-        return cue;
+    get(key) {
+        const json = cueShop.storage.get(key);
+        const cueItem = JSON.parse(json);
+        return cueItem;
     },
     getProducts() {
-        let products = store.get(PRODUCTS_KEY);
-        if (!products) {
-            store.save(PRODUCTS_KEY, cues);
-            products = cues;
+        let cueProducts = cueShop.get(CUE_KEY);
+        if (!cueProducts) {
+            cueShop.save(CUE_KEY, cues);
+            cueProducts = cues;
         }
-        return products;
+        return cueProducts;
     },
     getProduct(id) {
-        const products = store.getProducts();
-        const product = findById(cues, id);
-        return product;
+        const cueProducts = cueShop.getProducts();
+        const cueProduct = findById(cueProducts, id);
+        return cueProduct;
     },
-    getShoppingCart() {
-        let shoppingCart = store.get(SHOPPING_CART_KEY);
-        if (!shoppingCart) {
-            shoppingCart = [];
+    getCueShoppingCart() {
+        let cueShoppingCart = cueShop.get(CUE_SHOPPING_CART_KEY);
+        if (!cueShoppingCart) {
+            cueShoppingCart = [];
         }
-        return shoppingCart;
+        return cueShoppingCart;
     },
-    orderProduct(id) {
-        const shoppingCart = store.getShoppingCart();
-
-        const lineItem = findById(shoppingCart, id);
+    orderCue(id) {
+        const cueShoppingCart = cueShop.getCueShoppingCart();
+        const lineItem = findById(cueShoppingCart, id);
         if (lineItem) {
             lineItem.quantity++;
         }
@@ -54,11 +45,9 @@ const store = {
                 id: id,
                 quantity: 1
             };
-            shoppingCart.push(lineItem);
+            cueShoppingCart.push(lineItem);
         }
-
-        store.save(SHOPPING_CART_KEY, shoppingCart);
+        cueShop.save(CUE_SHOPPING_CART_KEY, cueShoppingCart);
     }
 };
-
-export default store;
+export default cueShop;
