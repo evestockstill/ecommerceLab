@@ -1,5 +1,5 @@
 import { findById } from '../common/utils.js';
-
+import cueShop from '../data/store.js';
 function renderProduct(cue) {
     const li = document.createElement('li');
     li.className = cue.category;
@@ -28,6 +28,7 @@ function renderProduct(cue) {
     button.textContent = 'Add';
     button.value = cue.id;
     button.addEventListener('click', () => {
+        cueShop.orderCue(cue.id);
         let cartItems = localStorage.getItem('cart');
         let cart;
         cart = cartItems('cart') ? JSON.parse(cartItems('cart')) : [];
