@@ -1,7 +1,7 @@
 import renderTableRow from './render-table-row.js';
 import cues from '../data/cues.js';
 import { cart } from '../data/cart.js';
-import { toUSD } from '../shopping-cart/register.js';
+import { toUSD } from '../common/utils.js';
 
 const tableElement = document.querySelector('tbody');
 // const cueIdFromOrder = cueOrder.id;

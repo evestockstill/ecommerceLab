@@ -1,2 +1,2 @@
 import './renderProducts.test.js';
-import '../shopping-cart/register.js';
+import './utility.test.js';

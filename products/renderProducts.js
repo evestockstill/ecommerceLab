@@ -1,5 +1,5 @@
-import store from '../data/store';
-import { toUSD } from '../shopping-cart/register.js';
+import { findById } from '../common/utils.js';
+
 function renderProduct(cue) {
     const li = document.createElement('li');
     li.className = cue.category;
@@ -20,28 +20,36 @@ function renderProduct(cue) {
 
     const p = document.createElement('p');
     p.className = 'price';
-
-    const usd = toUSD(cue.price);
-    const priceTextNode = document.createTextNode(usd);
-    p.appendChild(priceTextNode);
-
+    
+    const usd = cue.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    p.textContent = usd;
+    
     const button = document.createElement('button');
     button.textContent = 'Add';
     button.value = cue.id;
-    p.appendChild(button);
-    
-    const addButton = document.createElement('button');
-    button.textContent = 'Add';
-    button.value = cue.id;
     button.addEventListener('click', () => {
-        store.orderProduct(cue.id);
+        let cartItems = localStorage.getItem('cart');
+        let cart;
+        cart = cartItems('cart') ? JSON.parse(cartItems('cart')) : [];
+        
+        let lineItem = findById(cart, cue.id);  
+        if (!lineItem) {
+            lineItem = {
+                id: cue.id,
+                quantity: 1
+            };
+            cart.push(lineItem);
+        } 
+        else {
+            lineItem.quantity++;
+        }
+        cartItems = JSON.stringify(cartItems);
+        localStorage.setItem('cart', cartItems);
+        alert(`1 ${cue.name} added to cart`);
     });
-    p.appendChild(addButton);
-
+    p.appendChild(button);
     li.appendChild(p);
-
     return li;
 }
-
 export default renderProduct;
 
