@@ -11,14 +11,7 @@
 </head>
 
 <body>
-   <header><h3>Shopping Cart</h3>
-   <nav>
-       <a href="../index.html">Home</a>
-       <a href="../products/index.html">Products</a>
-       <a href="/shopping-cart/index.html">Cue Cart</a>
-   </nav>
-</header>
-<main>
+    <h3>Shopping Cart</h3>
     <table>
         <thead>
             <tr>
@@ -28,12 +21,11 @@
                 <th>Total</th>
             </tr>
         </thead>
-        <tbody>id: 'peachauer',
-        name: 'J.Pechauer Cues Limited Edition 50th Anniversary',
-        image: 'peachauer1400.jpg',
-        description: 'Limited Edition Ebony Cue with Simulated Ivory',
-        category: 'playing-cue',
-        price: 1500,   
+        <tbody>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
         </tbody>
         <tfoot>
             <tr>
@@ -42,14 +34,13 @@
                 <th>Order Total:</th>
                 <th id="order-total-cell"></th>
             </tr>
+           
         </tfoot>
     </table>
-    <p class="order-contianer">
-        <button>Place Order</button>
-    </p>
-    <main>
+    <button>Place Order</button>
     <script src="./app.js" type="module"></script>
-    
+    <script src="./render-table-row.js" type="module"></script>
+    <script src="../products/renderProducts.js" type="module"></script>
 </body>
 
 </html>
