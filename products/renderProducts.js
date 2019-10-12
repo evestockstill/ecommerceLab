@@ -6,6 +6,7 @@ function renderProduct(cue) {
     
     const h3 = document.createElement('h3');
     h3.textContent = cue.name;
+    h3.className = 'product';
     li.appendChild(h3);
     
     const img = document.createElement('img');
@@ -15,6 +16,7 @@ function renderProduct(cue) {
     
     const description = document.createElement('p');
     description.textContent = cue.description;
+    description.className = 'producut-info';
     li.appendChild(description);
 
     const p = document.createElement('p');

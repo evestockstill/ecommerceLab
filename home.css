@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html body {
+    background: grey;
+    font-family: monospace;
+}
+.logo {
+    height: 80px;
+}
+.header {
+background:  white;
+display: flex;
+justify-content: space-between;
+padding: 0.5rem 1rem;
+border-bottom: black;
+}
+.nav-button {
+    align-self: center;
+    border: 5px solid black;
+    cursor: pointer;  
+}
+.link1, .link2, .link3 {
+width: 25px;
+height: 5px;
+margin: 5px;
+background: black;
+transition: all 2s ease;
+}
+.page_links {
+    list-style: none;
+    transition: all 2s ease;
+}
+.link {
+    display: block;
+    background: blue;
+    padding: 0.7rem;
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+}
+.link:hover {
+    padding-left: 1rem;
+    background: lightsteelblue;
+}
+
+.hero {
+    min-height: calc(60vh - 92px);
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(255, 255, 255, 0.007)), url('./assets/9ballpool.jpeg')center/cover fixed no-repeat;
+   
+}
+.hero ::before {
+ will-change: auto;
+}
+#main {
+display: grid;
+ height: 500px;
+  margin: 1rem 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+}
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid black;
+    background: darkgray;
+}
+ /* li {
+    display: inline;
+    text-decoration: none;
+    list-style: none;
+    text-align: right;
+    color: black;
+} */
+/* a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+    color: black;
+} */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+    height: 50px;
+    background: wheat;
+    text-align: right; 
+} 
+
+ /* .big-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+    height: 200px;
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(255, 255, 255, 0.007)), url(./assets/pool\ balls.jpeg)center/cover fixed no-repeat;
+    text-align: center
+}   */
+
+
+

@@ -19,3 +19,4 @@ cart.forEach(cueOrder => {
     const totalCell = document.getElementById('order-total-cell');
     totalCell.textContent = toUSD(cartTotal);
 });
+const navBtn = document.querySelector('nav-button');
