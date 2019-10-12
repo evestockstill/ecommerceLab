@@ -1,4 +1,3 @@
-import { findById } from '../common/utils.js';
 import cueShop from '../data/store.js';
 function renderProduct(cue) {
     const li = document.createElement('li');
@@ -30,28 +29,6 @@ function renderProduct(cue) {
     button.addEventListener('click', () => {
         cueShop.orderCue(cue.id);
         let cartItems = localStorage.getItem('shopping-cart');
-        console.log(cartItems);
-        // let cart;
-        // if (cartItems) {
-        //     cart = JSON.parse(cartItems);
-        //     console.log('made it here');
-        // }
-        // else {
-        //     cart = [];
-        // }
-        // console.log(cart);
-        // console.log('id', cue.id);
-        // let lineItem = findById(cart, cue.id);  
-        // if (!lineItem) {
-        //     lineItem = {
-        //         id: cue.id,
-        //         quantity: 0
-        //     };
-        //     cart.push(lineItem);
-        // } 
-        // else {
-        //     lineItem.quantity++;
-        // }
         cartItems = JSON.stringify(cartItems);
         localStorage.setItem('cart', cartItems);
         alert(`1 ${cue.name} added to cart`);

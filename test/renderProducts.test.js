@@ -5,7 +5,6 @@ const test = QUnit.test;
 
 QUnit.module('Renders Products');
 test('renders a product', (assert) => {
-    // arrange
     const peachauer = {
         
         id: 'peachauer',
@@ -18,11 +17,9 @@ test('renders a product', (assert) => {
     const expected = '<li class="playing-cue" title="Limited Edition Ebony Cue with Simulated Ivory"><h3>J.Pechauer Cues Limited Edition 50th Anniversary</h3><img src="../assets/peachauer1400.jpg" alt="J.Pechauer Cues Limited Edition 50th Anniversary image"><p>Limited Edition Ebony Cue with Simulated Ivory</p><p class="price">$1,500.00<button value="peachauer">Add</button></p></li>';
     const dom = renderProduct(peachauer);
     const html = dom.outerHTML;
-
     assert.equal(html, expected);
 });
 test('renders a table row', assert => {
-    // arrange
     const peachauer = {
         id: 'peachauer',
         name: 'J.Pechauer Cues Limited Edition 50th Anniversary',
@@ -33,11 +30,11 @@ test('renders a table row', assert => {
     };
     const peachauerOrder = {
         id: 'peachauer',
-        quantity: 4,
+        quantity: 10,
     };
-    const expected = '<tr><td>J.Pechauer Cues Limited Edition 50th Anniversary</td><td>4</td><td>$1,500.00</td><td>$6,000.00</td></tr>';
+    const expected = '<tr><td>J.Pechauer Cues Limited Edition 50th Anniversary</td><td>10</td><td>$1,500.00</td><td>$15,000.00</td></tr>';
 
     const cueElementTr = renderTableRow(peachauer, peachauerOrder);
-    const stringHtmlOfFruitElement = cueElementTr.outerHTML;
-    assert.deepEqual(stringHtmlOfFruitElement, expected);
+    const stringHtmlOfCueElement = cueElementTr.outerHTML;
+    assert.deepEqual(stringHtmlOfCueElement, expected);
 });

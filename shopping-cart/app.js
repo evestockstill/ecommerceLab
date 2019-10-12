@@ -4,7 +4,6 @@ import { cart } from '../data/cart.js';
 import { toUSD } from '../common/utils.js';
 
 const tableElement = document.querySelector('tbody');
-// const cueIdFromOrder = cueOrder.id;
 
 let cartTotal = 0;
 cart.forEach(cueOrder => {

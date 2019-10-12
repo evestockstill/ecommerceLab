@@ -24,5 +24,4 @@ function renderLineItem(lineItem, cue) {
 
     return tr;
 }
-
 export default renderLineItem;

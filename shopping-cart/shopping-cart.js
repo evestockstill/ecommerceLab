@@ -8,9 +8,8 @@ const orderTotalCell = document.getElementById('order-total-cell');
 
 for (let i = 0; i < cart.length; i++) {
     const lineItem = cart[i];
-    const fruit = findById(cues, lineItem.id);
-    const dom = renderLineItem(lineItem, fruit);
-
+    const cue = findById(cues, lineItem.id);
+    const dom = renderLineItem(lineItem, cue);
     tbody.appendChild(dom);
 }
 const orderTotal = calcOrderTotal(cart, cues);
