@@ -4,100 +4,79 @@
     box-sizing: border-box;
 }
 html body {
-    background: grey;
+    background:black;
     font-family: monospace;
 }
-.logo {
-    height: 80px;
+#title {
+    color: hsla(95, 97%, 20%, 1);
+    padding-top: 5px;
+    font-size: 3rem;
 }
-.header {
-background:  white;
-display: flex;
-justify-content: space-between;
-padding: 0.5rem 1rem;
-border-bottom: black;
+nav {
+    height: 100px;
 }
-.nav-button {
-    align-self: center;
-    border: 5px solid black;
-    cursor: pointer;  
-}
-.link1, .link2, .link3 {
-width: 25px;
-height: 5px;
-margin: 5px;
-background: black;
-transition: all 2s ease;
-}
-.page_links {
-    list-style: none;
-    transition: all 2s ease;
-}
-.link {
-    display: block;
-    background: blue;
-    padding: 0.7rem;
-    font-size: 1rem;
-    text-decoration: none;
-    color: white;
-}
-.link:hover {
-    padding-left: 1rem;
-    background: lightsteelblue;
-}
-
 .hero {
-    min-height: calc(60vh - 92px);
-    background: linear-gradient(rgba(255,255,255,0.5), rgba(255, 255, 255, 0.007)), url('./assets/9ballpool.jpeg')center/cover fixed no-repeat;
-   
-}
-.hero ::before {
- will-change: auto;
+  height: 10px;
+  background: linear-gradient(hsla(95, 97%, 20%, 1),hsla(95, 97%, 28%, 1));
 }
 #main {
 display: grid;
- height: 500px;
+ height: 300px;
   margin: 1rem 1rem;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 25px;
 }
-.box {
+.nav-header {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 5px solid black;
-    background: darkgray;
+    justify-content: space-between;
+    padding: 0.25rem 1rem;
+    background:black;
+    /* border-bottom: 0.5rem solid hsla(95, 97%, 20%, 1); */
 }
- /* li {
-    display: inline;
+.link {
+    display: inline-block;
     text-decoration: none;
-    list-style: none;
-    text-align: right;
-    color: black;
-} */
-/* a:hover, a:visited, a:link, a:active {
-    text-decoration: none;
-    color: black;
-} */
-footer {
+    font-size: 14px;
+    padding: 14px;
+    font-style: italic;
+    text-transform: capitalize;
+    list-style-type: none;
+    background:black;
+    color: hsla(95, 97%, 20%, 1);
+    transition: all 1s ease; 
+}
+.link:hover {
+    color: white;
+    cursor: pointer;
+}
+.container {
+  max-height: 400px; 
+ max-width: 560px;
+ margin: 0rem auto;
+}
+.imgs img {
+ width: 100%;
+}
+.imgs {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 7px;
+ border: 5px solid black;
+ border-radius: 10px;
+ 
+}
+#contact {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 50px;
+    justify-content:left;
+    align-items: flex-end;
     height: 50px;
-    background: wheat;
-    text-align: right; 
-} 
+    margin-left: 30px;
+    padding-bottom: 25px;
+    background: black;
+    color: hsla(95, 97%, 20%, 1);
+    
+}
 
- /* .big-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 50px;
-    height: 200px;
-    background: linear-gradient(rgba(255,255,255,0.5), rgba(255, 255, 255, 0.007)), url(./assets/pool\ balls.jpeg)center/cover fixed no-repeat;
-    text-align: center
-}   */
 
 
 
