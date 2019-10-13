@@ -11,6 +11,7 @@ cart.forEach(cueOrder => {
         let cueTotal;
         if (cue.id === cueOrder.id) {
             const row = renderTableRow(cue, cueOrder);
+            debugger
             tableElement.appendChild(row);
             cueTotal = cue.price * cueOrder.quantity;
             cartTotal = cartTotal + cueTotal;

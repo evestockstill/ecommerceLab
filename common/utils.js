@@ -8,10 +8,7 @@ export function findById(cues, id) {
     return null;
 }
 export function toUSD(number) {
-    return number.toLocaleString('en-US', {
-        style: 'currency',
-        currency: 'USD'
-    });
+    return number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 }
 export function calcLineTotal(quantity, price) {
     const amount = quantity * price;
@@ -23,7 +20,7 @@ export function calcOrderTotal(cart, cues) {
         let lineItem = cart[i];
         // let quantityLineItem = cart[i].quantity;
         const foundCue = findById(cues, lineItem.id);
-        const lineTotal = calcLineTotal(lineItem, foundCue.price);
+        const lineTotal = calcLineTotal(lineItem.quantity, foundCue.price);
         orderTotal += lineTotal;
     }
     return orderTotal;

@@ -1,5 +1,7 @@
 import renderProduct from '../products/renderProducts.js';
-import renderTableRow from '../shopping-cart/render-table-row.js';
+import renderLineItem from '../shopping-cart/render-table-row.js';
+import { findById } from '../common/utils.js';
+import cues from '../data/cues.js';
 
 const test = QUnit.test;
 
@@ -19,22 +21,36 @@ test('renders a product', (assert) => {
     const html = dom.outerHTML;
     assert.equal(html, expected);
 });
-test('renders a table row', assert => {
-    const peachauer = {
+
+test('render s line item', assert => {
+    const lineItem = {
         id: 'peachauer',
-        name: 'J.Pechauer Cues Limited Edition 50th Anniversary',
-        image: 'peachauer1400.jpg',
-        description: 'Limited Edition Ebony Cue with Simulated Ivory',
-        category: 'playing-cue',
-        price: 1500,
+        quantity: 10
     };
-    const peachauerOrder = {
-        id: 'peachauer',
-        quantity: 10,
-    };
+    const peachauer = findById(cues, lineItem.id);
     const expected = '<tr><td>J.Pechauer Cues Limited Edition 50th Anniversary</td><td>10</td><td>$1,500.00</td><td>$15,000.00</td></tr>';
 
-    const cueElementTr = renderTableRow(peachauer, peachauerOrder);
-    const stringHtmlOfCueElement = cueElementTr.outerHTML;
-    assert.deepEqual(stringHtmlOfCueElement, expected);
+    const dom = renderLineItem(lineItem, peachauer);
+    const html = dom.outerHTML;
+    assert.equal(html, expected);
+
 });
+// test('renders a table row', assert => {
+//     const peachauer = {
+//         id: 'peachauer',
+//         name: 'J.Pechauer Cues Limited Edition 50th Anniversary',
+//         image: 'peachauer1400.jpg',
+//         description: 'Limited Edition Ebony Cue with Simulated Ivory',
+//         category: 'playing-cue',
+//         price: 1500,
+//     };
+//     const peachauerOrder = {
+//         id: 'peachauer',
+//         quantity: 10,
+//     };
+//     const expected = '<tr><td>J.Pechauer Cues Limited Edition 50th Anniversary</td><td>10</td><td>$1,500.00</td><td>$15,000.00</td></tr>';
+
+//     const cueElementTr = renderTableRow(peachauer, peachauerOrder);
+//     const stringHtmlOfCueElement = cueElementTr.outerHTML;
+//     assert.deepEqual(stringHtmlOfCueElement, expected);
+// });

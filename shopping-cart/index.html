@@ -6,36 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/f6aa7e629f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="shopping-cart.css">
     <link rel="stylesheet" href="../common/main.css">
 </head>
 
 <body>
-    <h3>Shopping Cart</h3>
-    <table>
-        <thead>
-            <tr>
-                <th class="align-left">Cues</th>
-                <th>Qty</th>
-                <th>Price</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-        <tfoot>
-            <tr>
-                <th></th>
-                <th></th>
-                <th>Order Total:</th>
-                <th id="order-total-cell"></th>
-            </tr>
-            <button id="place-order">Rack It</button>
-        </tfoot>
-    </table>
+    <nav class="nav">
+        <div class="nav-header">
+            <h1 id="title">Straight Shots</h1>
+            <a href="../index.html" class="link"><i class="fas fa-home"></i>Home
+            </a>
+            <a href="./index.html" class="link">
+                <i class="fas fa-shopping-cart"></i>Cart
+            </a>
+            <a href="../products/index.html" class="link">
+                <i class="fab fa-product-hunt"></i>Products
+            </a>
+        </div>
+        <div class="button">
+            <button>Rack It</button>
+        </div>
+    </nav>
+    <h3 id="title">Shopping Cart</h3>
+    <div id="container">
+        <table>
+            <thead>
+                <tr>
+                    <th class="align-left">Cues</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Order Total:</th>
+                    <th id="order-total-cell"></th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
     <script src="../src/app.js" type="module"></script>
-    
+
 </body>
 
 </html>

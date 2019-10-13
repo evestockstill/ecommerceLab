@@ -3,13 +3,8 @@ html body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: grey;
-    font-family: monospace
-}
-#nav {
-    height: 75px;
     background: black;
-    color: white;
+    font-family: monospace;
 }
 #cues {
     display: flex;
@@ -19,18 +14,20 @@ html body {
     border: 2px solid black;
 }
 .playing-cue, .jump-cue {
-   flex-wrap: wrap;
-   justify-content: space-around;
-   text-align: center;
-   height: 225px;
-   width: 200px;
-   margin: 10px;
-   padding: 25px;
-   align-items: center;
-   background: blue;
-   border: 1px solid black;
-   border-radius: 5px;
-   overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    text-transform: uppercase;
+    height: 225px;
+    width: 200px;
+    margin: 10px;
+    padding: 25px;
+    align-items: center;
+    background: linear-gradient(hsla(100, 97%, 14%, 1),hsla(100, 97%, 23%, 1));
+    border: 1px solid black;
+    color: white;
+    border-radius: 5px;
+    overflow: hidden;
 }
 img {
     width: 150px;
@@ -57,7 +54,33 @@ p.price {
 }
 button {
  margin-left: 45px;
+ border: 2px solid black;
+ background: black;
+ color: white;
+ border-radius: 2px;
  
+}
+.nav-header {
+    display: flex;
+    justify-content: end;
+    padding: 0.25rem 0.5rem;
+    background:black;
+}
+.link {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 14px;
+    font-style: italic;
+    text-transform: capitalize;
+    list-style-type: none;
+    background:black;
+    color: hsla(100, 97%, 23%, 1);
+    transition: all 1s ease; 
+}
+.link:hover {
+    color: white;
+    cursor: pointer;
 }
 
 
