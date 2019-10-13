@@ -31,7 +31,6 @@ display: grid;
     justify-content: space-between;
     padding: 0.25rem 1rem;
     background:black;
-    /* border-bottom: 0.5rem solid hsla(95, 97%, 20%, 1); */
 }
 .link {
     display: inline-block;
