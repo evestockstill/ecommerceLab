@@ -1,4 +1,5 @@
 import cueShop from '../data/store.js';
+import { toUSD } from '../common/utils.js'
 function renderProduct(cue) {
     const li = document.createElement('li');
     li.className = cue.category;
@@ -22,19 +23,22 @@ function renderProduct(cue) {
     const p = document.createElement('p');
     p.className = 'price';
     
-    const usd = cue.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-    p.textContent = usd;
+    const usd = toUSD(cue.price);
+    const priceTextNode = document.createTextNode(usd);
+    p.appendChild(priceTextNode);
     
     const button = document.createElement('button');
     button.textContent = 'Add';
     button.value = cue.id;
     button.addEventListener('click', () => {
         cueShop.orderCue(cue.id);
-        let cartItems = localStorage.getItem('shopping-cart');
-        cartItems = JSON.stringify(cartItems);
-        localStorage.setItem('cart', cartItems);
-        alert(`1 ${cue.name} added to cart`);
     });
+    //     // cue.orderCue(cue.id);
+    //     let cartItems = localStorage.getItem('cart');
+    //     cartItems = JSON.stringify(cartItems);
+    //     localStorage.setItem(cartItems);
+    //     alert(`1 ${cue.name} added to cart`);
+    // });
     p.appendChild(button);
     li.appendChild(p);
     return li;

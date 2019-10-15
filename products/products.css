@@ -5,6 +5,7 @@ html body {
   height: 100%;
   background: black;
   font-family: monospace;
+  cursor: url('../assets/9.png')auto;
 }
 #cues {
   display: flex;
@@ -39,8 +40,9 @@ img {
   cursor: zoom-in;
 }
 img:hover {
-  width: 200px;
-  height: 200px;
+  -webkit-transform: scale(2.1);
+        -ms-transform: scale(2.1);
+        transform: scale(2.1);
 }
 .product {
   padding-bottom: 15px;
@@ -64,6 +66,7 @@ button:hover {
   background: white;
   color: black;
   border: 2px solid white;
+  cursor: url('../assets/9.png')auto;
 }
 .nav-header {
   display: flex;

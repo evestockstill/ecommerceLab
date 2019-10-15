@@ -1,4 +1,4 @@
-import { toUSD } from '../common/utils.js';
+import { toUSD, calcLineTotal } from '../common/utils.js';
 
 function renderLineItem(lineItem, cue) {
     const tr = document.createElement('tr');
@@ -18,7 +18,7 @@ function renderLineItem(lineItem, cue) {
 
     const totalCell = document.createElement('td');
     totalCell.className = 'line-item-total';
-    const total = lineItem.quantity * cue.price;
+    const total = calcLineTotal(lineItem.quantity * cue.price);
     totalCell.textContent = toUSD(total);
     tr.appendChild(totalCell);
 

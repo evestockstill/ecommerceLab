@@ -1,8 +1,8 @@
 import cues from './cues.js';
 import { findById } from '../common/utils.js';
 
-const CUE_KEY = 'cues';
-const CUE_SHOPPING_CART_KEY = 'shopping-cart';
+const KEY = 'cues';
+const SHOPPING_CART_KEY = 'cart';
 const cueShop = {
     storage: window.localStorage,
     save(key, item) {
@@ -11,13 +11,13 @@ const cueShop = {
     },
     get(key) {
         const json = cueShop.storage.getItem(key);
-        const cueItem = JSON.parse(json);
-        return cueItem;
+        const item = JSON.parse(json);
+        return item;
     },
     getProducts() {
-        let cueProducts = cueShop.get(CUE_KEY);
+        let cueProducts = cueShop.get(KEY);
         if (!cueProducts) {
-            cueShop.save(CUE_KEY, cues);
+            cueShop.save(KEY, cues);
             cueProducts = cues;
         }
         return cueProducts;
@@ -27,16 +27,16 @@ const cueShop = {
         const cueProduct = findById(cueProducts, id);
         return cueProduct;
     },
-    getCueShoppingCart() {
-        let cueShoppingCart = cueShop.get(CUE_SHOPPING_CART_KEY);
-        if (!cueShoppingCart) {
-            cueShoppingCart = [];
+    getCart() {
+        let cart = cueShop.get(SHOPPING_CART_KEY);
+        if (!cart) {
+            cart = [];
         }
-        return cueShoppingCart;
+        return cart;
     },
     orderCue(id) {
-        const cueShoppingCart = cueShop.getCueShoppingCart();
-        const lineItem = findById(cueShoppingCart, id);
+        const cart = cueShop.getCart();
+        const lineItem = findById(cart, id);
         if (lineItem) {
             lineItem.quantity++;
         }
@@ -45,9 +45,9 @@ const cueShop = {
                 id: id,
                 quantity: 1
             };
-            cueShoppingCart.push(lineItem);
+            cart.push(lineItem);
         }
-        cueShop.save(CUE_SHOPPING_CART_KEY, cueShoppingCart);
+        cueShop.save(SHOPPING_CART_KEY, cart);
     }
 };
 export default cueShop;
