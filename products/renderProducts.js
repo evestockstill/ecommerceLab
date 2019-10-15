@@ -1,5 +1,5 @@
 import cueShop from '../data/store.js';
-import { toUSD } from '../common/utils.js'
+import { makePrettyCurrency } from '../common/utils.js'
 function renderProduct(cue) {
     const li = document.createElement('li');
     li.className = cue.category;
@@ -23,7 +23,7 @@ function renderProduct(cue) {
     const p = document.createElement('p');
     p.className = 'price';
     
-    const usd = toUSD(cue.price);
+    const usd = makePrettyCurrency(cue.price);
     const priceTextNode = document.createTextNode(usd);
     p.appendChild(priceTextNode);
     

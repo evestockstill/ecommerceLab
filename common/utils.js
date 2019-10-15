@@ -7,9 +7,14 @@ export function findById(cues, id) {
     }
     return null;
 }
-export function toUSD(number) {
-    return number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-}
+// export function toUSD(number) {
+//     return number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+// }
+export const makePrettyCurrency = (number) =>
+    number.toLocaleString('en-US', { 
+        style: 'currency',
+        currency: 'USD',
+    });
 export function calcLineTotal(quantity, price) {
     const amount = quantity * price;
     return amount;
