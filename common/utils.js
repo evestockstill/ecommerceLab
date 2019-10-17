@@ -7,14 +7,12 @@ export function findById(cues, id) {
     }
     return null;
 }
-// export function toUSD(number) {
-//     return number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-// }
-export const makePrettyCurrency = (number) =>
-    number.toLocaleString('en-US', { 
+function toUSD(number) {
+    return number.toLocaleString('en-US', {
         style: 'currency',
         currency: 'USD',
     });
+}
 export function calcLineTotal(quantity, price) {
     const amount = quantity * price;
     return amount;
@@ -23,10 +21,11 @@ export function calcOrderTotal(cart, cues) {
     let orderTotal = 0;
     for (let i = 0; i < cart.length; i++) {
         let lineItem = cart[i];
-        // let quantityLineItem = cart[i].quantity;
+        let quantityLineItem = cart[i].quantity;
         const foundCue = findById(cues, lineItem.id);
-        const lineTotal = calcLineTotal(lineItem.quantity, foundCue.price);
+        const lineTotal = calcLineTotal(quantityLineItem, foundCue.price);
         orderTotal += lineTotal;
     }
     return orderTotal;
 }
+export default toUSD;

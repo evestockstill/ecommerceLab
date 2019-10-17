@@ -1,42 +1,22 @@
-import renderLineItem from '../shopping-cart/render-line-item.js';
+import renderTableRow from './render-table-row.js';
 import cues from '../data/cues.js';
-import { makePrettyCurrency, findById } from '../common/utils.js';
+import { cart } from '../data/cart.js';
+import { toUSD } from '../common/utils.js';
 
 const tableElement = document.querySelector('tbody');
-const getLineTotal = (order, item) => item.price * order.quantity;
+// const cueIdFromOrder = cueOrder.id;
 
-const getCartTotal = (cart, cues) => {
-    let cartTotal = 0;
-    cart.forEach(order => {
-        const orderCue = findById(order.id, cues);
-        const lineTotal = getLineTotal(order, orderCue);
-        cartTotal = cartTotal + lineTotal;
+let cartTotal = 0;
+cart.forEach(cueOrder => {
+    cues.forEach(cue => {
+        let cueTotal;
+        if (cue.id === cueOrder.id) {
+            const row = renderTableRow(cue, cueOrder);
+            tableElement.appendChild(row);
+            cueTotal = cue.price * cueOrder.quantity;
+            cartTotal = cartTotal + cueTotal;
+        }
     });
-    return cartTotal;
-};
-const addLine = (cueOrder, cues) => {
-    const orderCue = findById(cueOrder.id, cues);
-    const line = renderLineItem(orderCue, cueOrder);
-    tableElement.appendChild(line);
-};
-const addLines = (cart, cues) => {
-    cart.forEach(cueOrder => {
-        addLine(cueOrder, cues);
-    });
-};
-const getTotalCell = (cart, fruits) => {
     const totalCell = document.getElementById('order-total-cell');
-    const cartTotal = getCartTotal(cart, fruits);
-    totalCell.textContent = makePrettyCurrency(cartTotal);
-};
-const buildTable = (cart, cues) => {
-    getTotalCell(cart, cues);
-    addLines(cart, cues);
-    debugger
-};
-const localStorage = localStorage.getItem('cart');
-const parsedCart = JSON.parse(localStorage);
-buildTable(parsedCart, cues);
-
-
-
+    totalCell.textContent = toUSD(cartTotal);
+});

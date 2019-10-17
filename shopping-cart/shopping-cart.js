@@ -1,23 +1,18 @@
-import cueShop from '../data/store.js';
-import renderLineItem from './render-line-item.js';
+import cart from '../data/cart.js';
+import cues from '../data/cues.js';
+import { findById, calcOrderTotal } from '../common/utils.js';
+import toUSD from '../common/utils.js';
+import renderTableRow from './render-table-row.js';
 
 const tbody = document.querySelector('tbody');
-const rackItBtn = document.getElementById('rack-it');
+const orderTotalCell = document.getElementById('order-total-cell');
 
-const cart = cueShop.getCart();
 for (let i = 0; i < cart.length; i++) {
     const lineItem = cart[i];
-    const cue = cueShop.getProduct(lineItem.id);
-    const dom = renderLineItem(lineItem, cue);
+    const cue = findById(cues, lineItem.id);
+    const dom = renderTableRow(lineItem, cue);
+
     tbody.appendChild(dom);
 }
-if (cart.length === 0) {
-    rackItBtn.disabled = true;
-}
-else {
-    rackItBtn.addEventListener('click', () => {
-        localStorage.removeItem('CART');
-        alert(`Order placed:` + JSON.stringify(cart, true, 2));
-        window.location = 'cueShop';
-    });
-}
+const orderTotal = calcOrderTotal(cart, cues);
+orderTotalCell.textContent = toUSD(orderTotal);
