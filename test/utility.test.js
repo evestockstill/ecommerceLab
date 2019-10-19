@@ -1,6 +1,8 @@
 import cues from '../data/cues.js';
 import cart from '../data/cart.js';
-import { findById, calcLineTotal, calcOrderTotal, } from '../common/utils.js';
+import calcOrderTotal from '../common/utils.js';
+import { findById, calcLineTotal } from '../common/utils.js';
+
 const test = QUnit.test;
 
 QUnit.module('utility');
@@ -27,6 +29,6 @@ test('calculate line total', (assert) => {
 });
 test('calculate order total', (assert) => {
     const expected = 45000;
-    const checkoutTotal = calcOrderTotal(cart, cues);
-    assert.equal(checkoutTotal, expected);
+    const orderTotal = calcOrderTotal(cart, cues);
+    assert.equal(orderTotal, expected);
 }); 

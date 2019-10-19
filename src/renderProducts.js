@@ -13,7 +13,7 @@ function renderProducts(cues) {
     li.appendChild(img);
 
     const p = document.createElement('p');
-    p.className = 'price';
+    // p.className = 'price';
     const usd = cues.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     p.textContent = usd;
     const priceTextNode = document.createTextNode(usd);

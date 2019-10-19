@@ -4,8 +4,8 @@ import renderProducts from '../src/renderProducts.js';
 const list = document.getElementById('cues');
 
 cues.forEach(cue => {
-    const items = renderProducts(cue);
-    list.appendChild(items);
+    const dom = renderProducts(cue);
+    list.appendChild(dom);
 });
 
 
