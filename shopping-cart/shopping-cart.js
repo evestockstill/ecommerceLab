@@ -15,6 +15,10 @@ if (json) {
 else {
     cart = [];
 }
+// const lineItem = {
+//     id: peachuer,
+//     quantity: 1
+// };
 
 for (let i = 0; i < cart.length; i++) {
     const lineItem = cart[i];

@@ -18,6 +18,7 @@ function renderProducts(cues) {
     p.textContent = usd;
     const priceTextNode = document.createTextNode(usd);
     p.appendChild(priceTextNode);
+    
 
     const button = document.createElement('button');
     button.textContent = 'Add';
