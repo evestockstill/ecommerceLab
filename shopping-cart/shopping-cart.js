@@ -38,6 +38,6 @@ else {
     placeOrderButton.addEventListener('click', () => {
         localStorage.removeItem('CART');
         alert('Order placed:\n' + JSON.stringify(cart, true, 2));
-        window.location = '/index.html';
+        window.location = 'products/index.html';
     });
 }

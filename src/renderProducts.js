@@ -1,3 +1,4 @@
+import { findById } from '../common/utils.js';
 function renderProducts(cues) {
     const li = document.createElement('li');
     li.className = cues.category;
@@ -24,6 +25,31 @@ function renderProducts(cues) {
     button.textContent = 'Add';
     button.value = cues.id;
     p.appendChild(button);
+    button.addEventListener('click', () => {
+
+        let json = localStorage.getItem('CART');
+        let cart;
+        if (json) {
+            cart = JSON.parse(json);
+        } else {
+            cart = [];
+        }
+        let lineItem = findById(cart, cues.id);
+        if (!lineItem) {
+            lineItem = {
+                id: cues.id,
+                quantity: 1
+            };
+            cart.push(lineItem);
+        }
+        else {
+            lineItem.quantity++;
+        }
+        json = JSON.stringify(cart);
+        localStorage.setItem('CART', json);
+        alert('1 ' + cues.name + ' added to cart');
+
+    });
 
     li.appendChild(p);
 
