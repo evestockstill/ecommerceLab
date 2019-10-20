@@ -14,13 +14,8 @@ function renderProducts(cues) {
     li.appendChild(img);
 
     const p = document.createElement('p');
-    // p.className = 'price';
     const usd = cues.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     p.textContent = usd;
-    const priceTextNode = document.createTextNode(usd);
-    p.appendChild(priceTextNode);
-    
-
     const button = document.createElement('button');
     button.textContent = 'Add';
     button.value = cues.id;
@@ -48,13 +43,9 @@ function renderProducts(cues) {
         json = JSON.stringify(cart);
         localStorage.setItem('CART', json);
         alert('1 ' + cues.name + ' added to cart');
-
     });
-
     li.appendChild(p);
-
     return li;
 }
-
 export default renderProducts;
 

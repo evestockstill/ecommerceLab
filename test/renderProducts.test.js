@@ -23,18 +23,13 @@ test('renders a product', (assert) => {
 });
 
 test('renders a line item', assert => {
-    // arrange
     const lineItem = {
         id: 'peachauer',
         quantity: 10
     };
     const peachauer = findById(cues, lineItem.id);
     const expected = '<tr><td class="align-left">J.Pechauer Cues Limited Edition 50th Anniversary</td><td>10</td><td>$1,500.00</td><td class="line-item-total">$15,000.00</td></tr>';
-
-    // act
     const dom = renderLineItem(lineItem, peachauer);
     const html = dom.outerHTML;
-
-    // assert
     assert.equal(html, expected);
 });

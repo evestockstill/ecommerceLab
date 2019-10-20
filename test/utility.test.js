@@ -27,10 +27,5 @@ test('calculate line total', (assert) => {
     const total = calcLineTotal(quantity, price);
     assert.equal(total, expected);
 });
-test('calculate order total', (assert) => {
-    const expected = 45000;
-    const orderTotal = calcOrderTotal(cart);
-    assert.equal(orderTotal, expected);
-}); 
 
 

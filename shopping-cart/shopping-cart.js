@@ -15,29 +15,21 @@ if (json) {
 else {
     cart = [];
 }
-// const lineItem = {
-//     id: peachuer,
-//     quantity: 1
-// };
-
 for (let i = 0; i < cart.length; i++) {
     const lineItem = cart[i];
     const cue = findById(cues, lineItem.id);
     const dom = renderLineItem(lineItem, cue);
-
     tbody.appendChild(dom);
 }
-
 const orderTotal = calcOrderTotal(cart, cues);
 orderTotalCell.textContent = toUSD(orderTotal);
-
 if (cart.length === 0) {
     placeOrderButton.disabled = true;
 }
 else {
     placeOrderButton.addEventListener('click', () => {
         localStorage.removeItem('CART');
-        alert('Order placed:\n' + JSON.stringify(cart, true, 2));
+        alert('Order placed:' + JSON.stringify(cart, true, 2));
         window.location = 'products/index.html';
     });
 }

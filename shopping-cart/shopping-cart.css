@@ -9,8 +9,8 @@ html body {
     width: 100%;
 }
 .button {
-   margin: 20px 50px;
-   padding: 1rem;
+    margin: 20px 50px;
+    padding: 1rem;
 }
 button {
     padding: 0.5rem;
@@ -36,11 +36,10 @@ nav {
     margin-top: 35px;
     padding: 50px;
 }
-
 table {  
     position: absolute;
-   margin-left: auto;
-   margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 td, th {
     text-align: center;
