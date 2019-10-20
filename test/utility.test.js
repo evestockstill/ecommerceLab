@@ -1,6 +1,4 @@
 import cues from '../data/cues.js';
-import cart from '../data/cart.js';
-import calcOrderTotal from '../common/utils.js';
 import { findById, calcLineTotal } from '../common/utils.js';
 
 const test = QUnit.test;
