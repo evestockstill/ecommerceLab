@@ -1,91 +1,99 @@
-* {
+html body {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-}  
-
-header {
-    text-align: center;
-    font-size: 2.5rem;
-    text-transform: capitalize;
-    margin: 50 0 0 5px;
-    color: white;
-    text-shadow: 2px 2px 2px black;
+  height: 100%;
+  background: black;
+  font-family: monospace;
+  cursor: url('../assets/9.png')auto;
 }
-p {
-    font-size: .8rem;
+#cues {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 2px solid black;
 }
-ul{
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}   
-li {
-    flex: 1;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    position: relative;
-    background: white;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    width: 100px;
-    height: 300px;
-    overflow: hidden;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    text-align: center;
-    box-shadow: 1px 1px 2px #ccc;
-    transition: transform 200ms ease-in-out;
+.playing-cue,
+.jump-cue {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  text-transform: uppercase;
+  height: 225px;
+  width: 200px;
+  margin: 10px;
+  padding: 25px;
+  align-items: center;
+  background: linear-gradient(hsla(100, 97%, 14%, 1), hsla(100, 97%, 23%, 1));
+  border: 1px solid black;
+  color: white;
+  border-radius: 5px;
+  overflow: hidden;
 }
-#cues li:hover {
-    overflow: hidden;
-    box-shadow: 2px 2px 3px #bbb;
-    transform: translate3d(-1px, -1px, 0);
+img {
+  width: 150px;
+  height: 150px;
+  border: 2px solid black;
+  border-radius: 5px;
+  transition: all 1s ease;
+  cursor: zoom-in;
 }
-#cues li h3 {
-    font-size: 0.9rem;
-    margin: 5px;
+img:hover {
+  -webkit-transform: scale(2.1);
+        -ms-transform: scale(2.1);
+        transform: scale(2.1);
 }
-#cues li img {
-    height: 40%;
-    width: 80%;
-    border: 2px solid black;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: all 1s ease;
+.product {
+  padding-bottom: 15px;
 }
-#cues li img:hover {
-    height: 65%;
-    width: 85%;
-    border: 2px solid black;
-    border-radius: 5px;
+p.producut-info {
+  padding-top: 5px;
 }
-.price {
-    font-size: 0.7rem;
-    position: absolute;
-    bottom: 0;
-    left: 0; 
-    right: 0;
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+p.price {
+  padding: 5px 0 0 20px;
 }
-.price button {
-    background: black;
-    border-radius: 5px;
-    color: white;
-    outline: none;
-    transition: color 200ms ease-in-out;
+button {
+  margin-left: 45px;
+  border: 2px solid black;
+  background: black;
+  color: white;
+  border-radius: 2px;
+  outline: none;
+  transition: all 1s ease;
 }
-.price button:hover {
-    background: #aaa;
-    color: black;
+button:hover {
+  background: white;
+  color: black;
+  border: 2px solid white;
+  cursor: url('../assets/9.png')auto;
 }
-footer {
-    margin-top: 50px;
-    text-align: center;;
+.nav-header {
+  display: flex;
+  justify-content: end;
+  padding: 0.25rem 0.5rem;
+  background: black;
 }
-
+.link {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 14px;
+  font-style: italic;
+  text-transform: capitalize;
+  list-style-type: none;
+  background: black;
+  color: hsla(100, 97%, 23%, 1);
+  transition: all 1s ease;
+}
+.link:hover {
+  color: white;
+  cursor: pointer;
+}
+.info {
+  height: 50px;
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}

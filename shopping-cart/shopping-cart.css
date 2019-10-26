@@ -1,16 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html body {
+    background:black;
+    font-family: monospace;
+    width: 100%;
+}
+.button {
+    margin: 20px 50px;
+    padding: 1rem;
+}
+button {
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    border-radius: 5px;
+    outline: none;
+}
 
+#title {
+    color: hsla(95, 97%, 20%, 1);
+    padding-top: 5px;
+    font-size: 3rem;
+    margin-left: 35px;
+}
+nav {
+    height: 100px;
+}
+#container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 35px;
+    padding: 50px;
+}
 table {  
-     width: 650px;
-     margin-left: 30px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
 }
 td, th {
     text-align: center;
-    border: solid 2px hsla(122, 100%, 14%, 1);
-    background: hsla(122, 100%, 14%, 0.31);
+    background: hsla(95, 97%, 20%, 1); 
+    padding: 25px;
+    height: 30px;
+    width: 245px;
 }
 h3 {
     text-align: center;
-    font-size: 2rem;
-    color: hsla(122, 100%, 8%, 0.91);
-    text-shadow: 1px 1px 1px  hsla(122, 100%, 3%, 0.91);
 }
+.link {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px;
+    margin-left: 18px;
+    font-style: italic;
+    text-transform: capitalize;
+    list-style-type: none;
+    background:black;
+    color: hsla(95, 97%, 20%, 1);
+    transition: all 1s ease; 
+}
+.link:hover {
+    color: white;
+    cursor: pointer;
+}
+
